@@ -89,7 +89,11 @@ called `livescript-compiled-buffer-name'."
 
 (define-derived-mode livescript-mode fundamental-mode
   "LiveScript"
-  "Major mode for editing LiveScript.")
+  "Major mode for editing LiveScript."
+
+  (setq indent-tabs-mode nil)
+  (setq tab-width 2)
+  (setq indent-line-function 'insert-tab))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.ls$" . livescript-mode))
